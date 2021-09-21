@@ -18,3 +18,4 @@ jobs:
         source_repo: "hivemq/hivemq-mqtt-web-client"
         source_branch: "master"
         destination_branch: "upstream"
+        github_token: ${{ secrets.PAT }}
