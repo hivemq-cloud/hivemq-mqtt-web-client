@@ -1,25 +1,19 @@
 # File: .github/workflows/repo-sync.yml
+name: Sync OSS version from upstream
 
 on:
   schedule:
   - cron:  "*/15 * * * *"
-  workflow_dispatch:
-
-env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
 
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
     - name: repo-sync
       uses: repo-sync/github-sync@v2
       with:
         source_repo: "hivemq/hivemq-mqtt-web-client"
         source_branch: "master"
         destination_branch: "upstream"
-        github_token: ${{ secrets.PAT }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
