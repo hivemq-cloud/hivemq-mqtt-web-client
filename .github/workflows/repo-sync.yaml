@@ -3,7 +3,7 @@ name: Sync OSS version from upstream
 
 on:
   schedule:
-  - cron:  "*/15 * * * *"
+  - cron:  "0 */12 * * *"
 
 jobs:
   repo-sync:
