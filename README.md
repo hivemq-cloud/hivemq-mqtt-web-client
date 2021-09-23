@@ -1,6 +1,15 @@
 hivemq-mqtt-web-client
 ======================
 
+## Cloud Deployment
+
+This repo is a fork of the open source client in the `hivemq` organisation. It was forked to ensure that no open source contributions get deployed to the websocket client we're linking to in the customer facing frontend (currently named Portal) without approval by the cloud team.
+
+A [Github Action](https://github.com/hivemq-cloud/hivemq-mqtt-web-client/actions/workflows/repo-sync.yaml) is syncing the changes from the open source master branch to the destination branch `upstream` of this fork.
+
+The client used for Cloud is deployed via [Netlify](https://github.com/hivemq-cloud/hivemq-mqtt-web-client/actions/workflows/repo-sync.yaml). 
+
+*IMPORTANT*: All changes to the master branch of this repository will be available in production immediately!
 ## A websockets based MQTT Client for your browser.
 
 This client runs on any modern browser, which supports websockets (sorry Internet Explorer <10!).
